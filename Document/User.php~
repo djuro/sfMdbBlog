@@ -1,0 +1,36 @@
+<?php
+
+namespace Acme\BlogBundle\Document;
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+/**
+ * @MongoDB\Document
+ */
+class User
+{
+	/**
+     * @MongoDB\Id
+     */
+	private $id;
+
+	/**
+     * @MongoDB\String
+     */
+	private $firstName;
+
+	/**
+     * @MongoDB\String
+     */
+	private $lastName;
+
+	/**
+     * @MongoDB\String
+     */
+	private $email;
+
+	/**
+     * @MongoDB\String
+     */
+	private $password;
+}
