@@ -1,3 +1,3 @@
 sfmdbBlog
 =========
-This is a simple Symfony2 web application that uses MongoDB. 
+This is a simple Symfony2 web application (Bundle) that uses MongoDB. 
