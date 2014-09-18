@@ -27,8 +27,6 @@ class UserController extends Controller
     {
         $formUser = new FormUser();
 
-        $form = new UserType();
-
         $form = $this->createForm(new UserType(), $formUser);
 
 
