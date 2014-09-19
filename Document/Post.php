@@ -53,6 +53,10 @@ class Post
 		$this->tags = $tags;
 	}
 
+    public function getId()
+	{
+		return $this->id;
+	}
 	/**
 	* @return string
 	*/

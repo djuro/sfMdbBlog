@@ -5,24 +5,28 @@ namespace Acme\BlogBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\SecurityContext;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/hello/{name}")
-     * @Template()
-     */
-    public function indexAction($name)
-    {
-        return array('name' => $name);
-    }
+    
 
-	/**
-     * @Route("/proba")
+    /**
+     * @Route("/login", name="blog_login")
      * @Template()
      */
-    public function probaAction()
+    public function loginAction(Request $request)
     {
-    	return array('nesto' => "Ovo je kako nekakav tekst za prvu stranicu ...");
+        if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
+            $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
+        } else {
+            $error = $request->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
+        }
+
+        return array(
+            'last_username' => $request->getSession()->get(SecurityContext::LAST_USERNAME),
+            'error'         => $error,
+        );
     }
 }

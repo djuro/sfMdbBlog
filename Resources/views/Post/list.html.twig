@@ -1,0 +1,17 @@
+<h2>Posts list</h2>
+<table border="1" cellpadding="3">
+<tr><th>Title</th><th>Body</th><th>Tags</th><th>Actions</th></tr>
+{% for post in posts %}
+	<tr>
+	<td>{{ post.title }}</td>
+	<td>{{ post.body }}</td>
+	<td>{% for tag in post.tags %}
+			{{ tag.name}}&nbsp;
+		{% endfor %}
+	</td>
+	<td>
+		<a href="{{path('blog_post_edit',{'postId':post.id})}}">Edit</a>&nbsp;
+		<a href="{{path('blog_post_delete',{'postId':post.id})}}">Delete</a></td>
+	</tr>
+{% endfor %}
+</table>
