@@ -29,6 +29,12 @@ class Post
      */
 	public $tags;
 
+	/**
+	* @Assert\NotBlank()
+	* @var string
+	*/
+	public $slug;
+
 	
 	public function getTitle()
 	{
@@ -59,6 +65,22 @@ class Post
 	public function setTags($tags)
 	{
 		$this->tags = $tags;
+	}
+
+	/**
+	* @return string
+	*/
+	public function getSlug()
+	{
+		return $this->slug;
+	}
+
+	/**
+	* @param string $slug
+	*/
+	public function setSlug($slug)
+	{
+		$this->slug = $slug;
 	}
 
 }

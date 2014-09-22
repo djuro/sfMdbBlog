@@ -1,0 +1,26 @@
+{% extends "AcmeBlogBundle:Show:layout.html.twig" %}
+{% block center %}
+    <div class="center">
+      <!-- -->
+      {% for post in posts %}
+      <h2><a href="{{path('blog_show_slug',{'slug':post.slug})}}">{{post.title}}</a></h2>
+      <!--h3>YOUR NEWS ON A OLD PAPER</h3-->
+
+      {{post.body|slice(0, 300) ~ '...'|nl2br}}
+      <p class="date">Posted by Jack
+        {% image 'bundles/acmeblog/images/more.gif' %}
+          <img src="{{ asset_url }}" alt="Show more" />
+        {% endimage %}
+        <a href="#">Read more</a>  
+        {% image 'bundles/acmeblog/images/comment.gif' %}
+          <img src="{{ asset_url }}" alt="Comment" />
+        {% endimage %} <a href="#">Comments (15)</a>  
+        {% image 'bundles/acmeblog/images/timeicon.gif' %}
+          <img src="{{ asset_url }}" alt="Time" />
+        {% endimage %} 17.01.</p>
+      <br />
+      {% endfor %}
+
+      <!-- -->
+    </div>
+    {% endblock center %}

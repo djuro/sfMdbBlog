@@ -30,6 +30,13 @@ class Post
 	private $tags = array();
 
 	/**
+	 * SEO friendly part of url, unique title
+     * @MongoDB\String
+     * @MongoDB\Index(unique=true, order="asc")
+     */
+	private $slug;
+	
+	/**
 	* @param string $title
 	*/
 	public function setTitle($title)
@@ -79,6 +86,22 @@ class Post
 	public function getTags()
 	{
 		return $this->tags;
+	}
+
+	/**
+	* @return string
+	*/
+	public function getSlug()
+	{
+		return $this->slug;
+	}
+
+	/**
+	* @param string $slug
+	*/
+	public function setSlug($slug)
+	{
+		$this->slug = $slug;
 	}
 
 }

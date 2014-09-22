@@ -41,7 +41,7 @@ class PostController extends Controller
 
             $post->setTitle($formPost->getTitle());
             $post->setBody($formPost->getBody());
-
+            $post->setSlug($formPost->getSlug());
             $tags = $this->generateTags($formPost->getTags());
 
             $post->setTags($tags);
@@ -81,6 +81,7 @@ class PostController extends Controller
         $formPost->setTitle($post->getTitle());
         $formPost->setBody($post->getBody());
         $formPost->setTags($this->formatTags($post->getTags()));
+        $formPost->setSlug($post->getSlug());
 
         $form = $this->createForm(new PostType(), $formPost);
 
@@ -91,7 +92,7 @@ class PostController extends Controller
             $post->setTitle($formPost->getTitle());
             $post->setBody($formPost->getBody());
             $post->setTags($this->generateTags($formPost->getTags()));
-
+            $post->setSlug($formPost->getSlug());
             $dm->persist($post);
             $dm->flush();
 

@@ -13,7 +13,8 @@ class PostType extends AbstractType
         $builder
             ->add('title','text',array('required'=>true))
             ->add('body', 'textarea',array('required'=>true))
-            ->add('tags', 'text',array('required'=>true));
+            ->add('tags', 'text',array('required'=>true))
+            ->add('slug','text',array('required'=>true));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
