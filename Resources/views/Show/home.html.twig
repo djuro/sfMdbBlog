@@ -7,7 +7,7 @@
       <!--h3>YOUR NEWS ON A OLD PAPER</h3-->
 
       {{post.body|slice(0, 300) ~ '...'|nl2br}}
-      <p class="date">Posted by Jack
+      <p class="date">Posted by {{post.author}}
         {% image 'bundles/acmeblog/images/more.gif' %}
           <img src="{{ asset_url }}" alt="Show more" />
         {% endimage %}
