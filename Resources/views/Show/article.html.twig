@@ -22,13 +22,16 @@
           <br />
         {% endfor %}
       {% endif %}
+      <br />
+      <h2>Leave comment:</h2>
+      <br />
       <form novalidate action="" method="post">
       {{form_label(form.author)}}:
        {{form_widget(form.author)}}{{form_errors(form.author)}}<br />
        {{form_label(form.text)}}:<br />
        {{form_widget(form.text)}}{{form_errors(form.text)}}<br /><br />
        {{form_widget(form._token)}}
-       <button type="submit">Save</button>
+       <button type="submit" class="submit-button">Save</button>
        </form>
     </div>
     

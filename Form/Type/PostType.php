@@ -12,7 +12,7 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title','text',array('required'=>true))
-            ->add('body', 'textarea',array('required'=>true))
+            ->add('body', 'textarea',array('required'=>true,'attr'=>array('class'=>'text-area')))
             ->add('tags', 'text',array('required'=>true))
             ->add('slug','text',array('required'=>true));
     }

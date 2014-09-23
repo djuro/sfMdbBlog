@@ -3,7 +3,7 @@
 namespace Acme\BlogBundle\Form\Model;
 
 
-
+use Symfony\Component\Validator\Constraints as Assert;
 /*
  *	Data underlying class for CommentType 
  */
@@ -11,11 +11,13 @@ class Comment
 {
 
 	/**
+	 * @Assert\NotBlank()
      * @var string
      */
 	public $text;
 
 	/**
+	 * @Assert\NotBlank()
 	 * @var string
 	 */
 	private $author;

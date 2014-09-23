@@ -84,3 +84,4 @@ input.button { background: #FFFFF4; color: #808080; border-right: 1px solid #ccc
 
 /* form elements */
 .text-area {width:400px;height:100px;}
+.submit-button {width:100px;height:30px;font-size:15px;}
