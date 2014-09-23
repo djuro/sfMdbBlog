@@ -46,6 +46,9 @@ class PostController extends Controller
 
             $post->setTags($tags);
            
+            $author = $this->get('security.context')->getToken()->getUser()->getUsername();
+            //var_dump($author);exit;
+            $post->setAuthor($author);
 
             $dm = $this->get('doctrine_mongodb')->getManager();
             $dm->persist($post);

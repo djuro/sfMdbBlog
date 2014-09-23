@@ -35,7 +35,17 @@ class Post
      * @MongoDB\Index(unique=true, order="asc")
      */
 	private $slug;
+
+	/**
+     * @MongoDB\String
+     */
+	private $author;
 	
+	/**
+	 * @MongoDB\EmbedMany(targetDocument="Comment")
+	 */
+	private $comments = array();
+
 	/**
 	* @param string $title
 	*/
@@ -102,6 +112,38 @@ class Post
 	public function setSlug($slug)
 	{
 		$this->slug = $slug;
+	}
+
+	/**
+	* @param Comment $comment
+	*/
+	public function addComment(Comment $comment)
+	{
+		$this->comments[] = $comment;
+	}
+
+	/**
+	* @return Comment[]
+	*/
+	public function getComments()
+	{
+		return $this->comments;
+	}
+
+	/**
+	* @param string $author
+	*/
+	public function setAuthor($author)
+	{
+		$this->author = $author;
+	}
+
+	/**
+	* @return string
+	*/
+	public function getAuthor()
+	{
+		return $this->author;
 	}
 
 }
