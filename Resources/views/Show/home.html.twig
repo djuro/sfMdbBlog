@@ -11,13 +11,13 @@
         {% image 'bundles/acmeblog/images/more.gif' %}
           <img src="{{ asset_url }}" alt="Show more" />
         {% endimage %}
-        <a href="#">Read more</a>  
+        <a href="{{path('blog_show_slug',{'slug':post.slug})}}">Read more</a>  
         {% image 'bundles/acmeblog/images/comment.gif' %}
           <img src="{{ asset_url }}" alt="Comment" />
-        {% endimage %} <a href="#">Comments (15)</a>  
+        {% endimage %} <a href="{{path('blog_show_slug',{'slug':post.slug})}}">Comments ({{post.comments|length}})</a>  
         {% image 'bundles/acmeblog/images/timeicon.gif' %}
           <img src="{{ asset_url }}" alt="Time" />
-        {% endimage %} 17.01.</p>
+        {% endimage %} </p>
       <br />
       {% endfor %}
 
