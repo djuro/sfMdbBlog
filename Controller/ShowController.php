@@ -90,4 +90,22 @@ class ShowController extends Controller
             'id' => $id,
             );
     }
+
+    /**
+    * Displays posts having the selected tag.
+    *
+    * @Route("/tag/{tag}", name="blog_show_tag")
+    * @Template()
+    */
+    public function postsHavingTagAction(Request $request, $tag)
+    {
+        $posts = $this->get('doctrine_mongodb')
+                        ->getManager()
+                        ->getRepository('AcmeBlogBundle:Post')
+                        ->findAllHavingTag($tag);
+
+        return array(
+            'posts'=>$posts
+            );
+    }
 }

@@ -14,6 +14,11 @@
         {% image 'bundles/acmeblog/images/timeicon.gif' %}
           <img src="{{ asset_url }}" alt="Time" />
         {% endimage %}</p>
+        <p>Tags:
+        {% for tag in post.tags %}
+        <a href="{{ path('blog_show_tag',{'tag':tag.name}) }}">{{ tag.name }}</a>
+        {% endfor %}
+        </p>
       <br />
       {% if comments|length > 0 %}
         {% for comment in comments %}

@@ -5,7 +5,7 @@ namespace Acme\BlogBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Acme\BlogBundle\Repository\PostRepository")
  */
 class Post
 {
@@ -26,6 +26,7 @@ class Post
 
 	/**
 	 * @MongoDB\EmbedMany(targetDocument="Tag")
+	 * @MongoDB\Index
 	 */
 	private $tags = array();
 
