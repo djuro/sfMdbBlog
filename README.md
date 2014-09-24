@@ -6,6 +6,6 @@ It features a basic blog platform with blog posts and comments.
 
 Data model consists of three documents: Post, Comment and Tag.
 
-User authentication and authorization is to be configured in 'app/config/security.yml', eg.
+User authentication and authorization is to be configured out of this bundle in 'app/config/security.yml', eg.
 http://symfony.com/doc/2.3/book/security.html#basic-example-http-authentication
 
