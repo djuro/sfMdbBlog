@@ -15,9 +15,7 @@
         {% image 'bundles/acmeblog/images/comment.gif' %}
           <img src="{{ asset_url }}" alt="Comment" />
         {% endimage %} <a href="{{path('blog_show_slug',{'slug':post.slug})}}">Comments ({{post.comments|length}})</a>  
-        {% image 'bundles/acmeblog/images/timeicon.gif' %}
-          <img src="{{ asset_url }}" alt="Time" />
-        {% endimage %} </p>
+        
       <br />
       {% endfor %}
 

@@ -22,13 +22,9 @@
     <div class="leftmenu">
       <div class="nav">
         <ul>
-          <li><a href="http://localhost/symfony/web/app_dev.php/blog/home">Home</a></li>
-          <li><a href="#">Articles</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Affiliates</a></li>
-          <li><a href="#">Archives</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="{{ path('blog_show_home') }}">Home</a></li>
+          <li><a href="{{ path('blog_show_home') }}">Articles</a></li>
+          <li><a href="{{ path('blog_post_list') }}">Admin area</a></li>
         </ul>
       </div>
     </div>

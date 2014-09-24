@@ -1,4 +1,14 @@
-<h2>Posts list</h2>
+{% extends 'AcmeBlogBundle:Post:layout.html.twig' %}
+
+{% block menu %}
+	{% include 'AcmeBlogBundle:Post:menu.html.twig' %}
+{% endblock menu %}
+
+{% block title %}
+	<h2>Posts list</h2>
+{% endblock title %}
+
+{% block content %}
 <table border="1" cellpadding="3">
 <tr><th>Title</th><th>Body</th><th>Tags</th><th>Actions</th></tr>
 {% for post in posts %}
@@ -15,3 +25,5 @@
 	</tr>
 {% endfor %}
 </table>
+
+{% endblock content %}
