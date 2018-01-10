@@ -1,4 +1,4 @@
-sfmdbBlog
+sfMdbBlog
 =========
 This is a simple Symfony2 web application (Bundle) that uses MongoDB.
 
